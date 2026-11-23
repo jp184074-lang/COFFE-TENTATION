@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4eadb">
+  <meta name="description" content="Coffe Tentation: café, postres y momentos para compartir.">
+  <title>Coffe Tentation | Un momento para disfrutar</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="announcement">☕ Un buen día comienza con un buen café · Descuento especial para estudiantes</div>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Coffe Tentation, inicio">
+      <span class="brand-mark">CT</span>
+      <span><strong>COFFE TENTATION</strong><small>CAFÉ · POSTRES · MOMENTOS</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav id="mainNav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a><a href="#menu">Nuestro menú</a><a href="#beneficios">Experiencia</a><a href="#contacto">Contacto</a>
+    </nav>
+    <button class="cart-button" id="openCart">🛍️ <span>Mi pedido</span><b id="cartCount">0</b></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">UN RINCÓN PARA DISFRUTAR</span>
+        <h1>Tu pausa favorita<br><em>tiene sabor a café.</em></h1>
+        <p>Sabores que reconfortan, postres para compartir y momentos que merecen quedarse.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#menu">Explorar menú <span>↗</span></a><a class="text-link" href="#beneficios">Conoce nuestra experiencia</a></div>
+        <div class="hero-note"><span>✦</span> Preparado con cariño, servido con una sonrisa.</div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85" alt="Taza de café servida sobre una mesa cálida">
+        <div class="floating-note"><span>☕</span><div><b>Un momento</b><small>solo para ti</small></div></div>
+        <div class="hero-stamp">HECHO<br>PARA<br>DISFRUTAR</div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <p>BUEN CAFÉ, BUENOS MOMENTOS</p><span>✳</span><p>ALGO DULCE PARA COMPARTIR</p><span>✳</span><p>HECHO CON AMOR</p>
+    </section>
+
+    <section class="menu-section section-pad" id="menu">
+      <div class="section-heading">
+        <div><span class="eyebrow">DESCUBRE TUS FAVORITOS</span><h2>Un menú para <em>antojarte.</em></h2></div>
+        <p>Elige algo delicioso y arma tu pedido en pocos pasos.</p>
+      </div>
+      <div class="catalog-tools">
+        <label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Buscar café, postre..." aria-label="Buscar productos"></label>
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Todos">Todo</button>
+          <button class="filter" data-category="Cafés">Cafés</button>
+          <button class="filter" data-category="Bebidas">Bebidas</button>
+          <button class="filter" data-category="Postres">Postres</button>
+          <button class="filter" data-category="Snacks">Snacks</button>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="menu-disclaimer">Imágenes ilustrativas. Productos, precios y disponibilidad de demostración; pueden ajustarse para el proyecto.</p>
+    </section>
+
+    <section class="experience" id="beneficios">
+      <div class="experience-image"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85" alt="Interior acogedor de una cafetería"></div>
+      <div class="experience-copy"><span class="eyebrow">MÁS QUE UNA CAFETERÍA</span><h2>Pequeños detalles,<br><em>grandes momentos.</em></h2><p>En Coffe Tentation queremos que disfrutes un espacio acogedor, productos de calidad y una experiencia sencilla desde tu celular.</p>
+        <div class="feature-list">
+          <div><span>01</span><p><b>Pedidos fáciles</b><small>Consulta el menú y prepara tu pedido desde donde estés.</small></p></div>
+          <div><span>02</span><p><b>Premiamos tu visita</b><small>Acumula puntos de demostración con cada compra.</small></p></div>
+          <div><span>03</span><p><b>Promos para compartir</b><small>Descuentos especiales y beneficios para estudiantes.</small></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loyalty section-pad">
+      <div><span class="eyebrow">CADA VISITA CUENTA</span><h2>Tu próximo antojo<br>puede tener <em>premio.</em></h2><p>Por cada pedido simulado acumulas puntos. ¡Completa 50 y desbloquea una recompensa de demostración!</p><button class="button button-light" id="showPoints">Consultar mis puntos</button></div>
+      <div class="points-card"><span>✦ COFFE CLUB</span><strong id="pointsDisplay">0</strong><small>PUNTOS ACUMULADOS</small><div class="points-track"><i id="pointsBar"></i></div><small id="pointsMessage">Te faltan 50 puntos para tu recompensa.</small></div>
+    </section>
+
+    <section class="contact-section section-pad" id="contacto">
+      <div><span class="eyebrow">HABLEMOS</span><h2>¿Tienes alguna<br><em>pregunta?</em></h2><p>Déjanos un mensaje. Este formulario guarda una confirmación local de demostración.</p><div class="contact-detail">✉️ <span>hola@coffetentation.example</span></div><div class="contact-detail">📍 <span>Manzanares, Caldas · Colombia</span></div></div>
+      <form id="contactForm" class="contact-form">
+        <label>Tu nombre<input name="name" required maxlength="60" placeholder="¿Cómo te llamas?"></label>
+        <label>Correo electrónico<input name="email" type="email" required placeholder="correo@ejemplo.com"></label>
+        <label>Mensaje<textarea name="message" required rows="4" maxlength="500" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea></label>
+        <button class="button button-dark" type="submit">Enviar mensaje ↗</button>
+        <p class="form-feedback" id="contactFeedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#inicio"><span class="brand-mark">CT</span><span><strong>COFFE TENTATION</strong><small>CAFÉ · POSTRES · MOMENTOS</small></span></a><p>Un espacio para disfrutar lo simple y delicioso.</p><small>© <span id="year"></span> Coffe Tentation · Proyecto académico de emprendimiento digital.</small></footer>
+
+  <div class="overlay" id="cartOverlay" hidden>
+    <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-head"><div><span class="eyebrow">TU SELECCIÓN</span><h2 id="cartTitle">Mi pedido</h2></div><button id="closeCart" class="close-button" aria-label="Cerrar carrito">×</button></div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-bottom"><div class="total-line"><span>Total estimado</span><strong id="cartTotal">$0</strong></div><p class="small-note">La compra y el pago son simulados. No se realizará ningún cobro.</p><button id="checkoutButton" class="button button-dark full-width">Confirmar pedido</button><p id="checkoutFeedback" class="form-feedback" role="status"></p></div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

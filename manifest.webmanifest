@@ -1,0 +1,13 @@
+{
+  "name": "Coffe Tentation",
+  "short_name": "Coffe Tentation",
+  "description": "Café, postres y momentos para compartir.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f1e8",
+  "theme_color": "#f4eadb",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
